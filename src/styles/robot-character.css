@@ -1,0 +1,178 @@
+.robot-character {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* FLOATING — head/body/arms/antennae bob as one unit; the shadow pulses
+   inversely so the robot reads as hovering above the ground. */
+.robot-float {
+  animation: robot-float-bob 3s ease-in-out infinite;
+}
+
+@keyframes robot-float-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+.robot-shadow {
+  transform-origin: 150px 330px;
+  animation: robot-shadow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes robot-shadow-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(0.8);
+    opacity: 0.22;
+  }
+}
+
+/* ANTENNAE — continuously alive sway, offset timings per side */
+.robot-antenna-left {
+  transform-origin: 118px 76px;
+  animation: antenna-sway-left 2.4s ease-in-out infinite;
+}
+
+.robot-antenna-right {
+  transform-origin: 182px 76px;
+  animation: antenna-sway-right 2.8s ease-in-out infinite;
+}
+
+@keyframes antenna-sway-left {
+  0%,
+  100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes antenna-sway-right {
+  0%,
+  100% {
+    transform: rotate(4deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+}
+
+/* EYES — a quick blink every few seconds, open the rest of the time */
+.robot-eyes {
+  transform-origin: 150px 129px;
+  animation: robot-blink 4.2s ease-in-out infinite;
+}
+
+@keyframes robot-blink {
+  0%,
+  90%,
+  100% {
+    transform: scaleY(1);
+  }
+  94% {
+    transform: scaleY(0.12);
+  }
+}
+
+.robot-chest-glow {
+  animation: chest-glow-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes chest-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ARMS — resting droop with a small idle sway by default */
+.robot-arm-left {
+  transform-origin: 100px 209px;
+  animation: arm-idle-left 2.6s ease-in-out infinite;
+}
+
+@keyframes arm-idle-left {
+  0%,
+  100% {
+    transform: rotate(-22deg);
+  }
+  50% {
+    transform: rotate(-14deg);
+  }
+}
+
+.robot-arm-right {
+  transform-origin: 200px 209px;
+  animation: arm-idle-right 2.6s ease-in-out infinite;
+}
+
+@keyframes arm-idle-right {
+  0%,
+  100% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(13deg);
+  }
+}
+
+/* WAVING — swaps in on the right arm while greeting. Raises from the resting
+   droop up past the head, swings twice, then lowers back to rest. */
+.robot-character.is-greeting .robot-arm-right {
+  animation: arm-wave 1.2s ease-in-out 2;
+}
+
+/* continuous variant, for a persistent mascot that keeps waving */
+.robot-character.is-waving-loop .robot-arm-right {
+  animation: arm-wave 1.2s ease-in-out infinite;
+}
+
+@keyframes arm-wave {
+  0% {
+    transform: rotate(20deg);
+  }
+  20% {
+    transform: rotate(-95deg);
+  }
+  40% {
+    transform: rotate(-70deg);
+  }
+  60% {
+    transform: rotate(-95deg);
+  }
+  80% {
+    transform: rotate(-70deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .robot-float,
+  .robot-shadow,
+  .robot-antenna-left,
+  .robot-antenna-right,
+  .robot-eyes,
+  .robot-chest-glow,
+  .robot-arm-left,
+  .robot-arm-right,
+  .robot-character.is-greeting .robot-arm-right,
+  .robot-character.is-waving-loop .robot-arm-right {
+    animation: none;
+  }
+}
