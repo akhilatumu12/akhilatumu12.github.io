@@ -26,6 +26,7 @@ import {
   Waypoints,
   Wand2,
 } from "lucide-react";
+import { asset } from "../lib/asset";
 
 /**
  * Brand glyph for a technology name, drawn from simple-icons.
@@ -102,11 +103,11 @@ const ICONS = {
  * To add another: drop the SVG in public/icons and map the skill name here.
  */
 const FILE_ICONS = {
-  "Java": "/icons/java-original.svg",
-  "VS Code": "/icons/vscode-original.svg",
-  "Heroku": "/icons/heroku-original.svg",
-  "Matplotlib": "/icons/matplotlib-original.svg",
-  "Apache Kafka": "/icons/apachekafka-original.svg",
+  "Java": asset("/icons/java-original.svg"),
+  "VS Code": asset("/icons/vscode-original.svg"),
+  "Heroku": asset("/icons/heroku-original.svg"),
+  "Matplotlib": asset("/icons/matplotlib-original.svg"),
+  "Apache Kafka": asset("/icons/apachekafka-original.svg"),
 };
 
 /**

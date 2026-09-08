@@ -5,6 +5,8 @@
  * ─────────────────────────────────────────────────────────────
  */
 
+import { asset } from "../lib/asset";
+
 export const profile = {
   name: "Akhila Tumu",
   initials: "AT",
@@ -29,7 +31,7 @@ export const profile = {
     "Final-year CSE student building AI and machine learning systems that solve real problems in healthcare, industry and education.",
   location: "Nuzvid, Eluru District, Andhra Pradesh",
   availability: "Open to internships & entry-level roles",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: asset("/resume.pdf"),
 
   /**
    * Hero portrait. Two versions are in public/ — swap the pair to change it:
@@ -37,8 +39,8 @@ export const profile = {
    *   "/akhila-tumu.jpg"      + "/akhila-tumu@0.5x.jpg"       (white bg, white shirt)
    * The small file is what phones download. Set photo to "" to hide it entirely.
    */
-  photo: "/akhila-tumu-grey.jpg",
-  photoSmall: "/akhila-tumu-grey@0.5x.jpg",
+  photo: asset("/akhila-tumu-grey.jpg"),
+  photoSmall: asset("/akhila-tumu-grey@0.5x.jpg"),
 
   about: [
     "I'm Akhila Tumu, an aspiring AI & Machine Learning Engineer and Computer Science student with a strong foundation in programming, data-driven problem-solving, and intelligent system design. I'm passionate about leveraging AI and ML technologies to create innovative solutions that make a measurable impact in healthcare, industry, and education.",
