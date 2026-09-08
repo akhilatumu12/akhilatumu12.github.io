@@ -125,6 +125,12 @@ export default function Nav() {
             </a>
           </div>
 
+          {/* Below xl the desktop CTA is gone, so the mascot stands next to
+              the menu button instead. */}
+          <span aria-hidden="true" className="w-12 shrink-0 xl:hidden">
+            <RobotCharacter className="is-waving-loop" />
+          </span>
+
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
