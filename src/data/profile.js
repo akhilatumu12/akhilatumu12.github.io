@@ -930,14 +930,6 @@ export const colleagues = [
     quote:
       "In a combined team she is the one keeping everyone in sync. Her coordination is what held the whole effort together.",
   },
-  {
-    name: "Shaik Shafiya",
-    role: "Colleague — healthcare AI",
-    location: "",
-    // angle: precision on the actual build
-    quote:
-      "We built a healthcare application together and her precision set the standard — she caught details early that the rest of us would have missed.",
-  },
 ];
 
 /* ────────────────────  WORKSHOPS & EVENTS  ───────────────────── */
